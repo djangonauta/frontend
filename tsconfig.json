@@ -4,9 +4,9 @@
   "compileOnSave": false,
   "compilerOptions": {
     "typeRoots": [
-      "@types",
-      "@angular",
-      "@angular/material"
+      "node_modules/@types",
+      "node_modules/@angular",
+      "node_modules/@angular/material"
     ],
     "outDir": "./dist/out-tsc",
     "strict": true,
