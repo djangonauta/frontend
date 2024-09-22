@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 import { AppComponent } from './app/app.component';
+import { LoginRequired, UserAuthenticated } from './app/auth/guards/auth.guard';
 import { LoginComponent } from './app/auth/login/login.component';
 import { ProdutosComponent } from './app/produtos/produtos.component';
 import { IndexComponent } from './index/index.component';
-import { authGuard } from './app/auth/guards/auth.guard';
 
 export const routes: Routes = [
   {
@@ -19,10 +19,11 @@ export const routes: Routes = [
         component: ProdutosComponent,
       }
     ],
-    canActivate: [authGuard]
+    canActivate: [LoginRequired],
   },
   {
     path: 'login',
     component: LoginComponent,
+    canActivate: [UserAuthenticated],
   }
 ];

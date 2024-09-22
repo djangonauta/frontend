@@ -2,7 +2,7 @@
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button>
-  <span>My App</span>
+  <a mat-button routerLink="/app">Sistema</a>
   <span class="spacer"></span>
   <a mat-button routerLink="produtos">Produtos</a>
   <a mat-button (click)="logout()" *ngIf="usuarioAutenticado()">Logout</a>

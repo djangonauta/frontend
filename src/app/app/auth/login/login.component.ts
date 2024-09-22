@@ -50,9 +50,10 @@ export class LoginComponent {
   login() {
     this.loginService.autenticar(this.loginForm.value).subscribe({
       next: (token) => {
-        console.log(token)
         this.tokenService.armazenarToken(token)
-        this.router.navigateByUrl('/app')
+        this.tokenService.atualizarToken(() => { // verificar se esta implementação está correta.
+          this.router.navigateByUrl('/app')
+        }, undefined)
       },
       error: (err) => {
         console.log(err)

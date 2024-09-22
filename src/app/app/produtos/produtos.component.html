@@ -1,1 +1,31 @@
-<p>produtos works!</p>
+<section style="display: flex; margin-top: 10px">
+  @defer {
+    @if (usuarios.results.length > 0) {
+      <mat-card style="width: 500px;">
+        <mat-card-header>
+          <mat-card-title>Produtos</mat-card-title>
+        </mat-card-header>
+        <table mat-table mat-card-content [dataSource]="usuarios.results" class="mat-elevation-z8">
+    
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> ID. </th>
+            <td mat-cell *matCellDef="let usuario"> {{ usuario.id }} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="username">
+            <th mat-header-cell *matHeaderCellDef> Usuário </th>
+            <td mat-cell *matCellDef="let usuario"> {{ usuario.username }} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="nome_completo">
+            <th mat-header-cell *matHeaderCellDef> Nome Completo </th>
+            <td mat-cell *matCellDef="let usuario"> {{ usuario.nome_completo }} </td>
+          </ng-container>
+    
+          <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+          <tr mat-row *matRowDef="let row; columns: colunas;"></tr>
+        </table>
+      </mat-card>
+    }
+  }
+</section>

@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  tokenUrl: 'http://localhost:8000/api/token/',
+  tokenUrl: 'https://caverna.digital/api/token/',
+  apiUrl: 'https://caverna.digital/api/v1/',
 };
